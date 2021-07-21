@@ -1,0 +1,20 @@
+.languageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2px;
+}
+
+.menuBtn {
+  color: white !important;
+  height: 50px;
+  width: 100px;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.menuItem {
+  width: 100px !important;
+  background-color: yellow !important;
+  color: white;
+}

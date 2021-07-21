@@ -1,0 +1,50 @@
+@mixin btns {
+  min-width: 75px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 5px;
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  svg {
+    margin-right: 2px;
+  }
+}
+
+.Toastify__toast--warning {
+  width: 100%;
+  color: #ffffff;
+  background-color: #343a40;
+  cursor: default;
+  div {
+    width: 100%;
+  }
+}
+.btnWrapper {
+  min-width: 50% !important;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: solid 1px #ffffff;
+}
+
+.yesBtn {
+  @include btns;
+  background-color: lightgreen;
+  &:hover {
+    background-color: darkgreen;
+    color: white;
+  }
+}
+
+.noBtn {
+  @include btns;
+  background-color: lightcoral;
+  &:hover {
+    background-color: darkred;
+    color: white;
+  }
+}

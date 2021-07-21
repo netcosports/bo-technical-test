@@ -1,0 +1,17 @@
+.progressWrapper {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressBar {
+  width: 80%;
+}
+
+.progressPct {
+  width: 20%;
+  font-size: 12px;
+  text-align: end;
+  padding-left: 5px;
+}

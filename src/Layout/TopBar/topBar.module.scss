@@ -1,0 +1,16 @@
+.toolBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #343a40;
+}
+
+.rightItemsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 175px;
+}
+
+.logo {
+  text-transform: capitalize;
+}

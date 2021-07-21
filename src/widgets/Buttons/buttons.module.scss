@@ -1,0 +1,37 @@
+@mixin generic-button {
+  font-weight: 300 !important;
+  font-size: 13px;
+  min-width: 105px !important;
+  padding: 5px 10px !important;
+  margin: 5px !important;
+}
+
+@mixin icon-button {
+  margin: 5px !important;
+  border-radius: 50px !important;
+}
+
+.primaryBtn {
+  @include generic-button;
+}
+
+.secondaryBtn {
+  @include generic-button;
+}
+
+.dangerBtn {
+  @include generic-button;
+}
+
+.iconBtn {
+  padding: 10px !important;
+  @include icon-button;
+}
+.secondaryIconBtn {
+  padding: 8px !important;
+  @include icon-button;
+}
+
+.tooltipText {
+  font-size: larger;
+}

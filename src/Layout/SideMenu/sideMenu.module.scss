@@ -1,0 +1,28 @@
+.tab {
+  width: 100%;
+  padding: 0px;
+  min-width: 0px;
+  min-height: 60px !important;
+  text-transform: capitalize !important;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  span {
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: smaller;
+    margin-left: 5px;
+    flex-wrap: wrap;
+    svg {
+      margin-right: 5px;
+      color: white;
+    }
+  }
+}
+
+.tabs {
+  width: 12%;
+  background-color: #212529;
+  color: white;
+  height: 100vh;
+  position: fixed;
+}

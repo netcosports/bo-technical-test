@@ -1,0 +1,51 @@
+input[type='file' i] {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 4px 4px 4px 4px;
+  padding: 5px 10px;
+  margin: 5px;
+  display: block;
+  max-width: 300px;
+  min-width: 100px;
+  width: 200px;
+  min-height: 20px;
+  max-height: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  .textLabel {
+    white-space: wrap;
+    display: block;
+    text-align: center;
+    margin-top: 1px;
+  }
+}
+
+.uploadGroupButtons {
+  display: flex;
+}
+
+.iconBtn {
+  width: 105px !important;
+  height: 34px !important;
+  margin: 5px !important;
+}
+
+.iconBtnValid {
+  width: 105px !important;
+  height: 34px !important;
+  margin: 5px !important;
+  background-color: #37a745;
+  color: #ffffff;
+}
+
+.spinner {
+  color: #197bff;
+}
