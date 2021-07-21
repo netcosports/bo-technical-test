@@ -9,14 +9,6 @@ required : node v15.10.0
 nvm use or use node v15.10.0
 npm install
 ```
-- Initialize git for your new project with the repository provided by the devOpsTeam
-- Ask devOps team to update the *jenkinsFile* and the *Task-definition* files (or make it yourself if you know what you're doing)
-  ***The jenkins file and task-definitions are suffixed with *.temp* in the template***
-- Update the *config.js* file accordingly
-
-
-Now, you are ready to develop !! :)
-
 ## Launch application 
 Assets uploading requires to have a .env file : REACT_APP_AWS_KEY
 
