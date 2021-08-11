@@ -9,8 +9,6 @@ required : node v15.10.0
 nvm use or use node v15.10.0
 npm install
 ```
-## Launch application 
-Assets uploading requires to have a .env file : REACT_APP_AWS_KEY
 
 ### Run local 
 ```
