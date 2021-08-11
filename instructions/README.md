@@ -29,12 +29,15 @@ password : livetest
 3. Add a form as per screenshot : 
    ![login page](login.png)
 4. Connect the form to the appropriate method
-5. Commit and push your work
+
 
 Form behavior : 
 * It must raise an error if one the fields is empty, and displays a message
 * the login button must be disabled if an error is raised
 * 'Forgot password' sentence must redirect to "/forgotPassword"
+
+5. Add a page to display user's video
+
 ### BONUS
 
 Use the background image constant defined in ```config.js``` to set the background of the login page. If no URL is provided, the background must the theme primary color
@@ -44,7 +47,7 @@ Use the background image constant defined in ```config.js``` to set the backgrou
 ***Please respect the below guidelines***
 
 # STACK :
-Our application is based on React/ContextAPI.
+Our application is based on React/ContextAPI. (no Redux !)
 
 See https://fr.reactjs.org/docs/context.html
 
