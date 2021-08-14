@@ -4,7 +4,7 @@ const palette = {
   primary: {
     main: colors.darkGray2,
     light: colors.darkGray1,
-    dark: colors.black2,
+    dark: colors.black,
     contrastText: colors.white,
     disabled: colors.lightGray5,
   },
