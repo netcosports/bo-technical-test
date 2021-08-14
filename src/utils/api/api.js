@@ -157,6 +157,7 @@ export async function fetchAdminPayload() {
 
 export const AuthAPI = {
   login(data) {
+    console.log(data);
     return apigw.post('/users-service-api/auth/login', data);
   },
   logout() {
