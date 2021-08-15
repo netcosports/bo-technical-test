@@ -10,12 +10,13 @@ const backGroundStyle = loginImagePath
   : { backgroundColor: palette.primary.main };
 
 function LoginView({ onSubmit, errorMsg }) {
+  console.log(errorMsg);
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
-      <Form onSubmit={onSubmit} method="put">
+      <Form onSubmit={onSubmit} method="post">
         {({ handleSubmit }) => {
           return (
-            <form onSubmit={handleSubmit} className={styles.form} method="put">
+            <form onSubmit={handleSubmit} className={styles.form} method="post">
               <Field
                 placeholder="Username"
                 name="username"
