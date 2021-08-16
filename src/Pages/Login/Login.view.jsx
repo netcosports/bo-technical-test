@@ -10,7 +10,7 @@ const backGroundStyle = loginImagePath
   : { backgroundColor: palette.primary.main };
 
 function LoginView({ onSubmit, errorMsg }) {
-  console.log(errorMsg);
+  const disabled = errorMsg !== null ? true : false;
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
       <Form onSubmit={onSubmit} method="post">
@@ -29,16 +29,18 @@ function LoginView({ onSubmit, errorMsg }) {
                 I could have download a police to keep a type="text" input with "password characters"
                 like : "https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/password.ttf"
                 but I decide to keep the password type as it appear way more simple. */}
+              {errorMsg !== null && <div className={styles.errorMsg}>{errorMsg}</div>}
               <Field
                 placeholder="Password"
                 name="password"
                 type="password"
                 component={RenderTextInput}
               />
+              {errorMsg !== null && <div className={styles.errorMsg}>{errorMsg}</div>}
               <a href="/forgotPassword" className={styles.link}>
                 Forgot password ?
               </a>
-              <button type="submit" className={styles.btn}>
+              <button type="submit" disabled={disabled} className={styles.btn}>
                 LOGIN
               </button>
             </form>
