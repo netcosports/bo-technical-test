@@ -1,0 +1,29 @@
+.loginWrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-image: url(https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg);*/
+  }
+
+  .copyrightText {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border: 1px solid #c7c8c9;
+    border-radius: 4px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20%;
+    background-color: #ffffff;
+  }

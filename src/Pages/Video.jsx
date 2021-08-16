@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // I need to use useLazy.js, hook to fetch data with paginataion
 // The limit is already set at 10
 import useLazy from '../utils/hooks/useLazy';
 
+// The loading is actually really long, I don't really know if I can improve that or if it come from server
 function Video() {
   const [videoTable, setVideoTable] = useState([]);
   const usePersonalizedHook = useLazy();
@@ -13,7 +15,10 @@ function Video() {
   console.log(videoTable);
   const videoList = videoTable.map((videos) => {
     return (
-      <tr>
+      <tr
+        onClick={() => {
+          console.log(videos);
+        }}>
         <td>{videos.name}</td>
         <td>{videos.status}</td>
         <td>{videos.publicationDate}</td>

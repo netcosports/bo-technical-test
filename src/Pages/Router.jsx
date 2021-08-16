@@ -10,6 +10,7 @@ import NoPage from './NoPage';
 import Login from './Login';
 import NotAuthorized from './NotAuthorized';
 import Health from './Health';
+import VideoDetails from './VideoDetails/VideoDetails.view';
 
 import Session from '../utils/Session';
 
@@ -46,6 +47,7 @@ function Router() {
         <Route exact path="/" key="/" component={() => <Redirect to="/login" />} />
         <Route exact path="/login" key="/login" component={() => <Login />} />
         <Route exact path="/health" key="/health" component={() => <Health />} />
+        <Route exact path="/videoDetails" key="videoDetails" component={() => <VideoDetails />} />
         <Route
           exact
           path="/forgotPassword"
