@@ -5,15 +5,14 @@ import styles from './videoDetails.module.scss';
 import OutlinedTextField from '../../widgets/OutlinedTextField/OutlinedTextField';
 import DatePickers from '../../widgets/DatePickers/DatePickers';
 import CheckBox from '../../widgets/CheckBox/CheckBox';
+import noImage from './noImage.png';
 
 const backGroundStyle = loginImagePath
   ? { backgroundImage: `url(${loginImagePath})` }
   : { backgroundColor: palette.primary.main };
 
-function VideoDetails() {
-  const onSubmit = () => {
-    console.log('form submit');
-  };
+function VideoDetails(state) {
+  console.log(state);
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
       <div className={styles.form}>
@@ -30,7 +29,7 @@ function VideoDetails() {
           <CheckBox value="" label="" checked />
         </div>
         <div>
-          <img alt="poster" />
+          <img src={noImage} alt="poster" />
         </div>
       </div>
       <div className={styles.copyrightText}>{legalText}</div>

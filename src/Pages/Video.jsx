@@ -15,14 +15,17 @@ function Video() {
   console.log(videoTable);
   const videoList = videoTable.map((videos) => {
     return (
-      <tr
-        onClick={() => {
-          console.log(videos);
+      <Link
+        to={{
+          pathname: '/videoDetails',
+          state: { videos },
         }}>
-        <td>{videos.name}</td>
-        <td>{videos.status}</td>
-        <td>{videos.publicationDate}</td>
-      </tr>
+        <tr>
+          <td>{videos.name}</td>
+          <td>{videos.status}</td>
+          <td>{videos.publicationDate}</td>
+        </tr>
+      </Link>
     );
   });
   return <table>{videoList}</table>;
