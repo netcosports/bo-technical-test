@@ -12,9 +12,9 @@ function Video() {
     const { data } = usePersonalizedHook;
     setVideoTable(data);
   }, []);
-  console.log(videoTable);
   const videoList = videoTable.map((videos) => {
     return (
+      // the state in the <Link /> will allow us to retrive state on location pathname
       <Link
         to={{
           pathname: '/videoDetails',

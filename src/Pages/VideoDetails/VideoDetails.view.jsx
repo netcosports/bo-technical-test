@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { loginImagePath, legalText } from '../../config';
 import { palette } from '../../muiTheme';
 import styles from './videoDetails.module.scss';
@@ -11,25 +12,32 @@ const backGroundStyle = loginImagePath
   ? { backgroundImage: `url(${loginImagePath})` }
   : { backgroundColor: palette.primary.main };
 
-function VideoDetails(state) {
-  console.log(state);
+function VideoDetails() {
+  const location = useLocation();
+  const { videos } = location.state;
+  console.log(videos);
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
       <div className={styles.form}>
         <div>
-          <OutlinedTextField value="" />
+          <p>name</p>
+          <OutlinedTextField value={videos.name} />
+        </div>
+        <p>Description</p>
+        <div>
+          <OutlinedTextField value={videos.description ? videos.description : 'No description'} />
         </div>
         <div>
-          <OutlinedTextField value="test" />
-        </div>
-        <div>
+          <p>Publication date</p>
           <DatePickers value="test" />
         </div>
+        <p>Public or private</p>
         <div>
-          <CheckBox value="" label="" checked />
+          <CheckBox value={videos.visibility} label={videos.visibility} checked />
         </div>
+        <p>Poster</p>
         <div>
-          <img src={noImage} alt="poster" />
+          <img src={videos.poster ? videos.poster : noImage} alt="poster" />
         </div>
       </div>
       <div className={styles.copyrightText}>{legalText}</div>
