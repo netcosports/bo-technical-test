@@ -13,12 +13,14 @@ function Video() {
   console.log(videoTable);
   const videoList = videoTable.map((videos) => {
     return (
-      <li key={videos.name}>
-        {videos.name}, {videos.status}, {videos.publicationDate}
-      </li>
+      <tr>
+        <td>{videos.name}</td>
+        <td>{videos.status}</td>
+        <td>{videos.publicationDate}</td>
+      </tr>
     );
   });
-  return <ul>{videoList}</ul>;
+  return <table>{videoList}</table>;
 }
 
 export default Video;
