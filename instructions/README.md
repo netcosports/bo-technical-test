@@ -16,7 +16,7 @@ npm start
 
 ```
 login : test
-password : livetest
+password : liveTest
 ```
 
 
