@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { VideoAPI } from '../api/api';
 import useDebounce from './useDebounce';
 
 /**
@@ -12,7 +12,7 @@ import useDebounce from './useDebounce';
  * @return {Object}
  */
 
-const useLazy = (api, limit, selectApi, filterKeys, additionalQueries = {}) => {
+const useLazy = (limit, filterKeys, additionalQueries = {}) => {
   const [data, setData] = useState([]);
   const [afterCursor, setAfterCursor] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +28,7 @@ const useLazy = (api, limit, selectApi, filterKeys, additionalQueries = {}) => {
       const {
         items,
         cursor: { after },
-      } = await api.findAll(baseQueries);
-
+      } = await VideoAPI.findAll(baseQueries);
       setAfterCursor(after);
       setData(items);
     } catch (error) {
@@ -46,7 +45,7 @@ const useLazy = (api, limit, selectApi, filterKeys, additionalQueries = {}) => {
         const {
           items,
           cursor: { after },
-        } = await api.findAll(queries);
+        } = await VideoAPI.findAll(queries);
 
         setAfterCursor(after);
         setData([...data, ...items]);
@@ -58,7 +57,7 @@ const useLazy = (api, limit, selectApi, filterKeys, additionalQueries = {}) => {
   };
 
   const fetchInitialData = async () => {
-    const dataForSelect = await selectApi.findAll();
+    const dataForSelect = await VideoAPI.findAll();
     setSelectData(dataForSelect);
   };
 

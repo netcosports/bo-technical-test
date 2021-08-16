@@ -2,10 +2,12 @@ import React from 'react';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import HomeIcon from '@material-ui/icons/Home';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
 import NotAvailable from './Pages/NotAvailable';
 import Test from './Pages/Test';
 import Home from './Pages/Home';
+import Video from './Pages/Video';
 import { colors } from './muiColors';
 
 // import { ROLES } from './models/User/User.constants'; used to restrict menu access
@@ -26,6 +28,12 @@ const nodeEnv = process.env.REACT_APP_ENVIRONMENT;
 //              - icon : MUI icon component (use fontSize="inherit" on it)
 
 const MENU_ENTRIES = [
+  {
+    name: 'Videos',
+    path: '/videos',
+    icon: <VideoLibraryIcon />,
+    component: () => <Video />,
+  },
   {
     name: 'home',
     path: '/home',

@@ -43,6 +43,12 @@ function LoginContainer() {
       setUser({});
     }
   };
+  /* We need to async/await this function to:
+    1) Treat the credentials first and login
+    2) We await the method get for the redirect
+    --> If we don't "async/await" we still have an error 403 as the code process everything on the same time and can't redirect and log at the same time
+
+  */
   const handleSubmit = async (values) => {
     if (values.username == null || values.password == null) {
       setErrorMsg("can't be empty");
