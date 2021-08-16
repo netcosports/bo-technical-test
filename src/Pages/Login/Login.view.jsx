@@ -13,7 +13,7 @@ function LoginView({ onSubmit, errorMsg }) {
   const disabled = errorMsg !== null ? true : false;
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
-      <Form onSubmit={onSubmit} method="post">
+      <Form onSubmit={onSubmit}>
         {({ handleSubmit }) => {
           return (
             <form onSubmit={handleSubmit} className={styles.form} method="post">

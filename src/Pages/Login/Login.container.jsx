@@ -43,16 +43,15 @@ function LoginContainer() {
       setUser({});
     }
   };
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     if (values.username == null || values.password == null) {
-      // setErrorMsg("Can't be empty");
       setErrorMsg("can't be empty");
     } else {
       try {
-        const auth = AuthAPI.login(values);
+        const auth = await AuthAPI.login(values);
         const headersWithToken = { ...headers, Authorization: `Bearer ${auth.accessToken}` };
-        const userMainData = UsersAPI.fetchMe(headersWithToken);
-        const userData = UsersAPI.fetchContext(headersWithToken);
+        const userMainData = await UsersAPI.fetchMe(headersWithToken);
+        const userData = await UsersAPI.fetchContext(headersWithToken);
         axios.defaults.headers.common = {
           ...headersWithToken,
           'x-account-key': userData.accountKey,
