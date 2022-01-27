@@ -48,9 +48,11 @@ function LoginContainer() {
 
   const handleSubmit = (values) => {
     setErrorMsg(null);
+
     try {
       const auth = AuthAPI.login(values);
       const headersWithToken = { ...headers, Authorization: `Bearer ${auth.accessToken}` };
+
       const userMainData = UsersAPI.fetchMe(headersWithToken);
       const userData = UsersAPI.fetchContext(headersWithToken);
       axios.defaults.headers.common = { ...headersWithToken, 'x-account-key': userData.accountKey };
