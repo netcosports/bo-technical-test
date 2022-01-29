@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
 import { loginImagePath, legalText } from '../../config';
 
@@ -7,14 +5,10 @@ import { palette } from '../../muiTheme';
 
 import styles from './login.module.scss';
 
-function LoginView({ onSubmit, errorMsg }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+function LoginView({ onSubmit, errorMsg, password, setPassword, username, setUsername, login }) {
   const backGroundStyle = loginImagePath
-    ? { backgroundImage: loginImagePath }
+    ? { backgroundImage: `url(${loginImagePath})` }
     : { backgroundColor: palette.primary.main };
-  const login = { username, password };
-
   return (
     <div className={styles.loginWrapper} style={backGroundStyle}>
       <form
@@ -27,7 +21,6 @@ function LoginView({ onSubmit, errorMsg }) {
           name="username"
           type="text"
           onChange={(e) => setUsername(e.target.value)}
-          label="Username"
           className={styles.input}
           placeholder="Username"
         />
@@ -35,7 +28,6 @@ function LoginView({ onSubmit, errorMsg }) {
         <input
           name="password"
           type="text"
-          value={password}
           onChange={(e) => setPassword(e.target.value)}
           className={styles.input}
           placeholder="Password"

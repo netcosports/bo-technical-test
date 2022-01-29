@@ -19,6 +19,9 @@ const headers = {
 };
 
 function LoginContainer() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const login = { username, password };
   const [errorMsg, setErrorMsg] = useState(null);
   const history = useHistory();
   const { user, setUser } = useContext(UserContext);
@@ -46,15 +49,14 @@ function LoginContainer() {
     }
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     setErrorMsg(null);
 
     try {
-      const auth = AuthAPI.login(values);
+      const auth = await AuthAPI.login(values);
       const headersWithToken = { ...headers, Authorization: `Bearer ${auth.accessToken}` };
-
-      const userMainData = UsersAPI.fetchMe(headersWithToken);
-      const userData = UsersAPI.fetchContext(headersWithToken);
+      const userMainData = await UsersAPI.fetchMe(headersWithToken);
+      const userData = await UsersAPI.fetchContext(headersWithToken);
       axios.defaults.headers.common = { ...headersWithToken, 'x-account-key': userData.accountKey };
       delete userData.password;
 
@@ -75,7 +77,15 @@ function LoginContainer() {
 
   return (
     <div>
-      <LoginView onSubmit={handleSubmit} errorMsg={errorMsg} />
+      <LoginView
+        onSubmit={handleSubmit}
+        errorMsg={errorMsg}
+        setUsername={setUsername}
+        setPassword={setPassword}
+        password={password}
+        username={username}
+        login={login}
+      />
     </div>
   );
 }

@@ -1,0 +1,45 @@
+$lightGray2: #757575;
+
+.loginWrapper {
+  overflow: hidden;
+  width: 86vw;
+  height: 100vh;
+  align-content: center;
+   & p{
+     margin: 40vh 40vw;
+     font-size: 1.2em;
+   }
+}
+.table{
+  width: 86vw;
+}
+.tableHeader {
+  width:86vw;
+  height: 5vh;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 5%;
+   & th{
+    width: 25vw;
+    margin: 0 2.5vw;
+   }
+}
+.tableBody {
+  width:80vw;
+  padding: 2vh 2vw;
+  margin: 0 3vw;
+  margin-top: 5%;
+  align-content: center;
+   & tr{
+     cursor: pointer;
+   }
+   & tr:hover{
+     background-color: $lightGray2;
+     color: white;
+   }
+   & td{
+    text-align: center;
+    width: 25vw;
+    margin: 0 2.5vw;
+   }
+}

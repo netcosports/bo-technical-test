@@ -26,7 +26,7 @@ const canonicalUrl = config?.backofficeUrl ?? null;
 // Login page configuration
 
 const loginImagePath =
-  'https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg';
+  'https://img.freepik.com/vecteurs-libre/fond-jaune-formes-abstraites-dynamiques_1393-144.jpg';
 
 const legalText =
   '©2021 All rights reserved. On Rewind® is a registered trademark of Origins Digital, a subsidiary of EMG.';
