@@ -9,18 +9,23 @@ function VideoContainer() {
   const [videos, setVideos] = useState();
   const [idVideo, setIdVideo] = useState(undefined);
 
-  // let video = [];
+  let video = [];
 
   if (idVideo !== undefined) {
     history.push('video-details');
   }
 
-  // if (idVideo !== undefined) {
-  //   video = videos.filter((video) => idVideo === video.id).map((video) => video);
-  // }
-
+  if (idVideo !== undefined) {
+    video = videos.filter((video) => idVideo === video.id).map((video) => video);
+  }
+  // eslint-disable-next-line no-console
+  console.log(video);
   useEffect(() => {
-    VideoAPI.findAll().then((response) => setVideos(response));
+    VideoAPI.findAll({
+      limit: 10,
+    }).then((response) => {
+      setVideos(response.items);
+    });
   }, []);
 
   return (
