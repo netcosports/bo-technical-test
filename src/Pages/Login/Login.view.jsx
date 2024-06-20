@@ -1,4 +1,5 @@
 import { loginImagePath, legaltext } from '../../config';
+
 import { palette } from '../../muiTheme';
 
 import styles from './login.module.scss';

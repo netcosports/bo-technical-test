@@ -4,9 +4,9 @@
 
 - Install dependencies
 ```
-required : node v15.10.0
+required : node v20.11.0
 
-nvm use or use node v15.10.0
+nvm use or use node v20.11.0
 npm install
 ```
 

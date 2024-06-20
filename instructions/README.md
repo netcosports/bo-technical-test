@@ -1,9 +1,9 @@
 # HOW TO START THE APP
 
 ```
-required : node v15.10.0
+required : node v20.11.0
 
-nvm use or use node v15.10.0
+nvm use or use node v20.11.0
 
 npm install
 ```
@@ -24,9 +24,9 @@ password : liveTest
 
 ### TODO 
 
-1. Create a new branch
+1. Fork the repository
 2. Fix the current bug preventing the page to load
-3. Add a form as per screenshot : 
+3. Add a form as per screenshot (the icons at the end of the inputs are not mandatory) : 
    ![login page](login.png)
 4. Connect the form to the appropriate method
 
@@ -36,7 +36,8 @@ Form behavior :
 * the login button must be disabled if an error is raised
 * 'Forgot password' sentence must redirect to "/forgotPassword"
 
-5. Add a page to display user's video
+5. Add a page to display a list of users videos
+6. Add a page to display a single video from the list, using forms to edit the video's title and description - The submit button must not POST on the api, but display the payload in a modal
 
 ### BONUS
 
