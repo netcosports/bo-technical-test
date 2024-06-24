@@ -1,6 +1,7 @@
 {
   "extends": ["eslint-config-prettier"],
   "plugins": ["prettier"],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
