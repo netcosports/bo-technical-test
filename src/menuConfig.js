@@ -2,11 +2,13 @@ import React from 'react';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import HomeIcon from '@material-ui/icons/Home';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import OndemandVideo from '@material-ui/icons/OndemandVideo';
 
 import NotAvailable from './Pages/NotAvailable';
 import Test from './Pages/Test';
 import Home from './Pages/Home';
 import { colors } from './muiColors';
+import ListVideos from './Pages/ListVideos';
 
 // import { ROLES } from './models/User/User.constants'; used to restrict menu access
 
@@ -55,6 +57,29 @@ const MENU_ENTRIES = [
         component: () => <NotAvailable />,
       },
     ],
+  },
+  {
+    name: 'videosList',
+    path: '/videoslist',
+    icon: <OndemandVideo />,
+    component: () => <ListVideos />,
+    homePage: {
+      displayButton: true,
+      buttonColor: colors.green2,
+      icon: <OndemandVideo fontSize="inherit" />,
+    },
+    // subItems: [
+    //   {
+    //     name: 'Create',
+    //     path: '/new',
+    //     component: () => <NotAvailable />,
+    //   },
+    //   {
+    //     name: 'Edit',
+    //     path: '/:newsTypeId/edit',
+    //     component: () => <NotAvailable />,
+    //   },
+    // ],
   },
   {
     name: 'test',

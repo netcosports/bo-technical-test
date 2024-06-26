@@ -10,7 +10,7 @@ import Session from '../../utils/Session';
 
 import { MODULES, ROLES } from '../../models/User/User.constants';
 
-import LoginView from './Login.view';
+import ListVideosView from './ListVideos.view';
 
 const headers = {
   Accept: 'application/json',
@@ -18,7 +18,7 @@ const headers = {
   'Accept-Version': 'v6',
 };
 
-function LoginContainer() {
+function ListVideoContainer() {
   const [errorMsg, setErrorMsg] = useState(null);
   const history = useHistory();
   const { user, setUser } = useContext(UserContext);
@@ -63,18 +63,11 @@ function LoginContainer() {
     }
   };
 
-  useEffect(() => {
-    if (!!user?.id && !!user?.accessToken) {
-      setInitialLanguage(user?.meta?.language);
-      redirectUser();
-    }
-  }, []);
-
   return (
     <div>
-      <LoginView onSubmit={handleSubmit} errorMsg={errorMsg} />
+      <ListVideosView onSubmit={handleSubmit} errorMsg={errorMsg} />
     </div>
   );
 }
 
-export default LoginContainer;
+export default ListVideoContainer;
